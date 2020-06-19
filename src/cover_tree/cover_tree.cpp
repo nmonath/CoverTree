@@ -361,6 +361,7 @@ std::vector<CoverTree::Node *> CoverTree::ContainingParents(CoverTree::Node* cur
         unsigned i = 0;
         while (!found && i < num_children) {
             scalar d = n->children[i]->dist(nn);
+            std::cout << "Child " << i << " distance " << d << std::endl;
             if (d==0) {
                 found = true;
             } else {
