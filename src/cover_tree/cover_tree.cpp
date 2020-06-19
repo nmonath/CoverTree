@@ -365,13 +365,13 @@ std::vector<CoverTree::Node *> CoverTree::ContainingParents(CoverTree::Node* cur
             if (d==0) {
                 found = true;
             } else {
-                i += 1
+                i += 1;
             }
         }
         if (!found) {
-            std::cout << "ERROR!! This is not supposed to happen. No matching child."
+            std::cout << "ERROR!! This is not supposed to happen. No matching child.";
         } else {
-            n -> n->children[i];
+            n = n->children[i];
         }
     }
     CoverTree::Node * curr = n;
