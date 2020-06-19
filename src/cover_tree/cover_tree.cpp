@@ -355,7 +355,7 @@ std::vector<CoverTree::Node *> CoverTree::ContainingParents(CoverTree::Node* cur
     CoverTree::Node * nn = CoverTree::NearestNeighbour(p).first;
     CoverTree::Node * n = nn;
     while (!n->children.empty()) {
-        unsigned num_children = current->children.size();
+        unsigned num_children = n->children.size();
         std::vector<int> idx(num_children);
         bool found = false;
         unsigned i = 0;
