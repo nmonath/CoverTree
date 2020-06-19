@@ -352,9 +352,28 @@ std::vector<CoverTree::Node *> CoverTree::ContainingParents(CoverTree::Node* cur
 {
     std::vector<CoverTree::Node *> res;
 
-    CoverTree::Node * n = CoverTree::NearestNeighbour(p).first;
+    CoverTree::Node * nn = CoverTree::NearestNeighbour(p).first;
+    CoverTree::Node * n = nn;
+    while (!n->children.empty()) {
+        unsigned num_children = current->children.size();
+        std::vector<int> idx(num_children);
+        bool found = false;
+        unsigned i = 0;
+        while (!found && i < num_children) {
+            scalar d = n->children[i]->dist(nn);
+            if (d==0) {
+                found = true;
+            } else {
+                i += 1
+            }
+        }
+        if (!found) {
+            std::cout << "ERROR!! This is not supposed to happen. No matching child."
+        } else {
+            n -> n->children[i];
+        }
+    }
     CoverTree::Node * curr = n;
-//    std::cout << "Found nn" << std::endl;
     while (curr != root) {
         res.push_back(curr);
         curr = curr->parent;
