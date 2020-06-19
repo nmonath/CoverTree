@@ -373,6 +373,7 @@ std::vector<CoverTree::Node *> CoverTree::ContainingParents(CoverTree::Node* cur
         } else {
             n = n->children[i];
         }
+        break;
     }
     CoverTree::Node * curr = n;
     while (curr != root) {
